@@ -1,4 +1,18 @@
 {
+    "nom":"nom",
+    "prenom":"prenom",
+    "telephone":"telephone",
+    "région":"région",
+    "connexion":"connexion",
+    "Non enregistré?":"Non enregistré?",
+    "Créer un compte?":"Créer un compte",
+    "S`inscrire":"S`inscrire",
+    "mot de passe":"mot de passe",
+    "champ est obligatoire":"champ est obligatoire",
+    "ce champ doit etre compose 10 chiffre minimum":"ce champ doit etre compose 10 chiffre minimum",
+    "ce champ  doit être composé seulement avec du que de chiffre":"ce champ  doit être composé seulement avec du que de chiffre",
+    "ce champ doit être composé seulement avec du lettres":"ce champ doit être composé seulement avec du lettres",
+    "retourner la page de connexion":"retourner la page de connexion",
+    "Formulaire d'inscription":"Formulaire d'inscription",
     "ajouter":"ajouter"
-
 }

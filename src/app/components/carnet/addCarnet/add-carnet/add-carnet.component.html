@@ -6,29 +6,29 @@
     <h2>{{'ajouter' |translate }}</h2>
     </div>
         <div class="input_field">
-          <label for="first">nom</label>
+          <label for="first">{{'nom'|translate}}</label>
           <input type="text"formControlName="nom" />
           <div>
             <div
               *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
               class="alert alert-danger"
             >
-              <div *ngIf="nom?.errors?.required">Nom est obligatoire .</div>
+              <div *ngIf="nom?.errors?.required">{{'champ est obligatoire'|translate}}.</div>
               <div *ngIf="nom?.errors?.pattern">
-                nom doit etre compose seulement avec du lettres.
+                {{'ce champ doit être composé seulement avec du lettres'|translate}}
               </div>
             </div>
         </div>
         <div class="form-group">
-          <label for="first">prenom</label>
+          <label for="first">{{'prenom'|translate}}</label>
           <input type="text" class="form-control" formControlName="prenom" />
           <div
             *ngIf="prenom?.invalid && (prenom?.dirty || prenom?.touched)"
             class="alert alert-danger"
           >
-            <div *ngIf="prenom?.errors?.required">prenom est obligatoire .</div>
+            <div *ngIf="prenom?.errors?.required">{{'champ est obligatoire'|translate}}</div>
             <div *ngIf="prenom?.errors?.pattern">
-              prenom doit etre compose seulement avec du lettres.
+              {{'ce champ doit être composé seulement avec du lettres'|translate}}
             </div>
           </div>
         </div>
@@ -42,27 +42,27 @@
             class="alert alert-danger"
           >
             <div *ngIf="telephone?.errors?.minlength">
-              telephone doit etre compose 10 chiffre minimum.
+              {{"ce champ doit etre compose 10 chiffre minimum"|translate}}
             </div>
             <div *ngIf="telephone?.errors?.required">
-              telephone est obligatoire .
+              {{'champ est obligatoire'|translate}}
             </div>
             <div *ngIf="telephone?.errors?.pattern">
-              telephone doit etre compose seulement avec du que de chiffre.
+              {{"ce champ  doit être composé seulement avec du que de chiffre"|translate}}
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="first">région</label>
+          <label for="first">{{'région'|translate}}</label>
           <select class="form-control" formControlName="region">
             <option *ngFor="let region of regionList" value="{{ region.nom }}">
               {{ region.nom }}
             </option>
           </select>
         </div>
-        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
-          Submit
-        </button>
+        <input type="submit" [disabled]="form.invalid"class="button" value="{{'ajouter' |translate }}">
+         
+      
       </div>
 
       <!--  col-md-6   -->

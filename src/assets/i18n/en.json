@@ -1,3 +1,20 @@
 {
-    "ajouter":"add"
+    "ajouter":"add",
+    "nom":"last name",
+    "prenom":"first name",
+    "telephone":"telephone",
+    "région":"region",
+    "connexion":"login",
+    "Non enregistré?":"Not registered?",
+    "Créer un compte?":" Create an account",
+    "S`inscrire":"Register",
+    "mot de passe":"password",
+    "champ est obligatoire":"field is required",
+    "Formulaire d'inscription":"Registration Form",
+    "retourner la page de connexion":"return to the login page",
+    "ce champ doit etre compose 10 chiffre minimum":"this field must be composed of 10 digits minimum",
+    "ce champ  doit être composé seulement avec du que de chiffre":"this field must be composed only with the number of digits",
+    "ce champ doit être composé seulement avec du lettres":"this field must be composed only with letters"
+    
+   
 }
