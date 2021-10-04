@@ -1,0 +1,73 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="add()">
+    <h2>Contact Us</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="first">nom</label>
+          <input type="text" class="form-control" formControlName="nom" />
+          <div>
+            <div
+              *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="nom?.errors?.required">Nom est obligatoire .</div>
+              <div *ngIf="nom?.errors?.pattern">
+                nom doit etre compose seulement avec du lettres.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="first">prenom</label>
+          <input type="text" class="form-control" formControlName="prenom" />
+          <div
+            *ngIf="prenom?.invalid && (prenom?.dirty || prenom?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="prenom?.errors?.required">prenom est obligatoire .</div>
+            <div *ngIf="prenom?.errors?.pattern">
+              prenom doit etre compose seulement avec du lettres.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="first">telephone</label>
+          <input type="text" class="form-control" formControlName="telephone" />
+          <div
+            *ngIf="
+              telephone?.invalid && (telephone?.dirty || telephone?.touched)
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="telephone?.errors?.minlength">
+              telephone doit etre compose 10 chiffre minimum.
+            </div>
+            <div *ngIf="telephone?.errors?.required">
+              telephone est obligatoire .
+            </div>
+            <div *ngIf="telephone?.errors?.pattern">
+              telephone doit etre compose seulement avec du que de chiffre.
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="first">région</label>
+          <select class="form-control" formControlName="region" >
+
+            <option *ngFor = "let region of regionList" value="region.nom">{{region.nom}}</option>
+          </select>
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">
+            Submit
+          </button>
+      </div>
+     
+ <!--  col-md-6   -->
+ 
+    </div>
+
+  
+    
+  </form>
+</div>

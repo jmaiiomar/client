@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-add-carnet (newCarnet)="addCarnet($event)"></app-add-carnet>
+    </div>
+    <div class="col-md-6">
+      <input type="text" class="form-control" [(ngModel)]="nom" />
+      <span>{{ nom }}</span>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Telephone</th>
+            <th>Region</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carne of carneList">
+            <th scope="row"></th>
+            <td>{{ carne.nom }}</td>
+            <td>{{ carne.prenom }}</td>
+            <td>{{ carne.telephone }}</td>
+            <td>{{ carne.region }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
