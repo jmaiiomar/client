@@ -10,7 +10,8 @@ export class CarnetService {
   RegionURL:string ='https://geo.api.gouv.fr/regions?fields=nom,code';
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      
     })
   };
   constructor(private http: HttpClient) { }

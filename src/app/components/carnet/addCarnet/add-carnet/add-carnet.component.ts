@@ -17,6 +17,9 @@ export class AddCarnetComponent implements OnInit {
   form: FormGroup;
   regionList: any;
   constructor(private carnetService: CarnetService, private fb: FormBuilder) {
+
+     
+
     let formcontrols = {
       nom: new FormControl('', [
         Validators.required,
