@@ -4,8 +4,13 @@
       <app-add-carnet (newCarnet)="addCarnet($event)"></app-add-carnet>
     </div>
     <div class="col-md-6">
-      <input type="text" class="form-control" [(ngModel)]="nom" />
-      <span>{{ nom }}</span>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="item"
+        (input)="filtreListe()"
+      />
+
       <table class="table table-striped">
         <thead>
           <tr>

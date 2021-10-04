@@ -15,7 +15,7 @@ export class AddCarnetComponent implements OnInit {
   @Output() newCarnet = new EventEmitter();
 
   form: FormGroup;
-  regionList :any;
+  regionList: any;
   constructor(private carnetService: CarnetService, private fb: FormBuilder) {
     let formcontrols = {
       nom: new FormControl('', [
