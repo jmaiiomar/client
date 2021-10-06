@@ -25,17 +25,20 @@ export class LoginComponent implements OnInit {
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
       ]),
       password: new FormControl('', [Validators.required]),
-      type: new FormControl('', [Validators.required]),
     };
     this.loginform = this.fb.group(formcontrols);
   }
   ngOnInit(): void {}
   login(): void {
-    const data = this.loginform.value;
-    this.userService.login(data).subscribe((res) => {
-      if (res == null) {
-        alert('erro');
+    const email: string = this.loginform.get('email')?.value;
+    const password: string = this.loginform.get('password')?.value;
+
+    this.userService.login(email, password).subscribe((res) => {
+      console.log(res);
+      if (res.data === null) {
+        alert(' mot de passe ou email incorrect');
       } else {
+        localStorage.setItem('currentUser', JSON.stringify(res.data));
         this.router.navigateByUrl('/home');
       }
     });

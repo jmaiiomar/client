@@ -20,7 +20,8 @@
     "Ajout avec succès":"added successfully",
     "Annuler":"Cancel",
     "Confirmation":"Confirmation",
-    "vous voulez supprimer ?":"you want to delete?"
+    "vous voulez supprimer ?":"you want to delete?",
+    "Se déconnecter":"Logout"
     
    
 }

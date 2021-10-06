@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CarnetService } from 'src/app/services/carnet/carnet.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class CarnetComponent implements OnInit {
   carneList: any[] = [];
   item: any;
   selected: any;
-  constructor(private carnetService: CarnetService) {}
+  constructor(private carnetService: CarnetService, private router: Router) {}
 
   ngOnInit(): void {
     this.carnetService.getCarnets().subscribe((res) => {
@@ -37,20 +38,23 @@ export class CarnetComponent implements OnInit {
     }
   }
   select(id: any) {
-    this.selected=id;
+    this.selected = id;
   }
   delete(): void {
-    const id=this.selected
+    const id = this.selected;
 
     this.carnetService.deleteCarnet(id).subscribe((res) => {
       var index = this.carneList.findIndex(function (o) {
         return o.id === id;
-        ;
       });
       if (index !== -1) {
         this.carneList.splice(index, 1);
         this.carneList.sort((a: any, b: any) => a.nom.localeCompare(b.nom));
       }
     });
+  }
+  Logout(): void {
+    localStorage.removeItem('currentUser');
+    this.router.navigateByUrl('/');
   }
 }

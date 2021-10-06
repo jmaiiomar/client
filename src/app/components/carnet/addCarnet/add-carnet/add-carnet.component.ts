@@ -58,7 +58,7 @@ export class AddCarnetComponent implements OnInit {
     const data = this.form.value;
     this.carnetService.addCarnet(data).subscribe((res) => {
       if (res.data.id == null) {
-        alert('erro');
+        alert('Exist');
       } else {
         this.hide=true;
         this.newCarnet.emit(res.data);
