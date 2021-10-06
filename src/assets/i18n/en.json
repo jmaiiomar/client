@@ -14,7 +14,13 @@
     "retourner la page de connexion":"return to the login page",
     "ce champ doit etre compose 10 chiffre minimum":"this field must be composed of 10 digits minimum",
     "ce champ  doit être composé seulement avec du que de chiffre":"this field must be composed only with the number of digits",
-    "ce champ doit être composé seulement avec du lettres":"this field must be composed only with letters"
+    "ce champ doit être composé seulement avec du lettres":"this field must be composed only with letters",
+    "Supprimer":"Delete",
+    "Recherche":"Search",
+    "Ajout avec succès":"added successfully",
+    "Annuler":"Cancel",
+    "Confirmation":"Confirmation",
+    "vous voulez supprimer ?":"you want to delete?"
     
    
 }

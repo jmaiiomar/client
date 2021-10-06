@@ -1,34 +1,43 @@
 <div class="form_wrapper">
   <div class="form_container">
-   
-  <form [formGroup]="form" (ngSubmit)="add()">
-    <div class="title_container">
-    <h2>{{'ajouter' |translate }}</h2>
-    </div>
-        <div class="input_field">
-          <label for="first">{{'nom'|translate}}</label>
-          <input type="text"formControlName="nom" />
-          <div>
-            <div
-              *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
-              class="alert alert-danger"
-            >
-              <div *ngIf="nom?.errors?.required">{{'champ est obligatoire'|translate}}.</div>
-              <div *ngIf="nom?.errors?.pattern">
-                {{'ce champ doit être composé seulement avec du lettres'|translate}}
-              </div>
+    <form [formGroup]="form" (ngSubmit)="add()">
+      <div class="title_container">
+        <h2>{{ "ajouter" | translate }}</h2>
+      </div>
+      <div class="input_field">
+        <label for="first">{{ "nom" | translate }}</label>
+        <input type="text" formControlName="nom" />
+        <div>
+          <div
+            *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="nom?.errors?.required">
+              {{ "champ est obligatoire" | translate }}.
             </div>
+            <div *ngIf="nom?.errors?.pattern">
+              {{
+                "ce champ doit être composé seulement avec du lettres"
+                  | translate
+              }}
+            </div>
+          </div>
         </div>
         <div class="form-group">
-          <label for="first">{{'prenom'|translate}}</label>
+          <label for="first">{{ "prenom" | translate }}</label>
           <input type="text" class="form-control" formControlName="prenom" />
           <div
             *ngIf="prenom?.invalid && (prenom?.dirty || prenom?.touched)"
             class="alert alert-danger"
           >
-            <div *ngIf="prenom?.errors?.required">{{'champ est obligatoire'|translate}}</div>
+            <div *ngIf="prenom?.errors?.required">
+              {{ "champ est obligatoire" | translate }}
+            </div>
             <div *ngIf="prenom?.errors?.pattern">
-              {{'ce champ doit être composé seulement avec du lettres'|translate}}
+              {{
+                "ce champ doit être composé seulement avec du lettres"
+                  | translate
+              }}
             </div>
           </div>
         </div>
@@ -42,30 +51,48 @@
             class="alert alert-danger"
           >
             <div *ngIf="telephone?.errors?.minlength">
-              {{"ce champ doit etre compose 10 chiffre minimum"|translate}}
+              {{ "ce champ doit etre compose 10 chiffre minimum" | translate }}
             </div>
-            <div *ngIf="telephone?.errors?.required">
-              {{'champ est obligatoire'|translate}}
-            </div>
+            
             <div *ngIf="telephone?.errors?.pattern">
-              {{"ce champ  doit être composé seulement avec du que de chiffre"|translate}}
+              {{
+                "ce champ  doit être composé seulement avec du que de chiffre"
+                  | translate
+              }}
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="first">{{'région'|translate}}</label>
-          <select class="form-control" formControlName="region">
+          <label for="first">{{ "région" | translate }}</label>
+          <select class="select_option" formControlName="region">
             <option *ngFor="let region of regionList" value="{{ region.nom }}">
               {{ region.nom }}
             </option>
           </select>
+          <div
+            *ngIf="
+            region?.invalid && (region?.dirty || region?.touched)
+            "
+            class="alert alert-danger"
+          >
+            
+            <div *ngIf="region?.errors?.required">
+              {{ "champ est obligatoire" | translate }}
+            </div>
+            
+          </div>
         </div>
-        <input type="submit" [disabled]="form.invalid"class="button" value="{{'ajouter' |translate }}">
-         
-      
       </div>
-
+      <input
+        type="submit"
+        [disabled]="form.invalid"
+        class="button"
+        value="{{ 'ajouter' | translate }}"
+      />
+      <div *ngIf="hide" class="alert alert-success" role="alert">
+        <p style="text-align: center">{{ "Ajout avec succès" | translate }}</p>
+      </div>
       <!--  col-md-6   -->
-  </form>
-</div>
+    </form>
+  </div>
 </div>

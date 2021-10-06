@@ -13,13 +13,10 @@ import {
 })
 export class AddCarnetComponent implements OnInit {
   @Output() newCarnet = new EventEmitter();
-
+  hide=false;
   form: FormGroup;
   regionList: any;
   constructor(private carnetService: CarnetService, private fb: FormBuilder) {
-
-     
-
     let formcontrols = {
       nom: new FormControl('', [
         Validators.required,
@@ -30,11 +27,11 @@ export class AddCarnetComponent implements OnInit {
         Validators.pattern("[A-Za-z.'-]+"),
       ]),
       telephone: new FormControl('', [
-        Validators.required,
         Validators.minLength(10),
         Validators.pattern('[0-9]+'),
       ]),
-      region: new FormControl(''),
+      region: new FormControl('',Validators.required,
+      ),
     };
     this.form = this.fb.group(formcontrols);
   }
@@ -63,8 +60,9 @@ export class AddCarnetComponent implements OnInit {
       if (res.data.id == null) {
         alert('erro');
       } else {
+        this.hide=true;
         this.newCarnet.emit(res.data);
-        alert('ok !');
+        
       }
     });
   }

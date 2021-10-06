@@ -1,7 +1,7 @@
 <div class="form_wrapper">
   <div class="form_container">
     <div class="title_container">
-      <h2>{{"Formulaire d'inscription" | translate}}</h2>
+      <h2>{{ "Formulaire d'inscription" | translate }}</h2>
     </div>
     <div class="row clearfix">
       <div class="">
@@ -13,10 +13,25 @@
                 <input
                   type="text"
                   name="name"
-                  placeholder="{{'nom'|translate}}"
+                  placeholder="{{ 'nom' | translate }}"
                   formControlName="nom"
                 />
+                <div
+            *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="nom?.errors?.required">
+              {{ "champ est obligatoire" | translate }}.
+            </div>
+            <div *ngIf="nom?.errors?.pattern">
+              {{
+                "ce champ doit être composé seulement avec du lettres"
+                  | translate
+              }}
+            </div>
+          </div>
               </div>
+              
             </div>
             <div class="col_half">
               <div class="input_field">
@@ -24,10 +39,24 @@
                 <input
                   type="text"
                   name="name"
-                  placeholder="{{'prenom'|translate}}"
+                  placeholder="{{ 'prenom' | translate }}"
                   required
                   formControlName="prenom"
                 />
+                <div
+                *ngIf="prenom?.invalid && (prenom?.dirty || prenom?.touched)"
+                class="alert alert-danger"
+              >
+                <div *ngIf="prenom?.errors?.required">
+                  {{ "champ est obligatoire" | translate }}
+                </div>
+                <div *ngIf="prenom?.errors?.pattern">
+                  {{
+                    "ce champ doit être composé seulement avec du lettres"
+                      | translate
+                  }}
+                </div>
+              </div>
               </div>
             </div>
           </div>
@@ -40,24 +69,53 @@
               required
               formControlName="email"
             />
+            <div
+            *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="email?.errors?.required">
+              {{ "champ est obligatoire" | translate }}
+            </div>
+            <div *ngIf="email?.errors?.pattern">
+              {{
+                "Invalid Email"
+                  | translate
+              }}
+            </div>
+          </div>
           </div>
           <div class="input_field">
             <span><i aria-hidden="true" class="fa fa-lock"></i></span>
             <input
               type="password"
-              placeholder="{{'mot de passe'|translate}}"
+              placeholder="{{ 'mot de passe' | translate }}"
               required
               formControlName="pwd"
             />
+            <div
+            *ngIf="pwd?.invalid && (pwd?.dirty || pwd?.touched)"
+            class="alert alert-danger"
+          >
+            <div *ngIf="pwd?.errors?.required">
+              {{ "champ est obligatoire" | translate }}
+            </div>
+            <div *ngIf="pwd?.errors?.minlength">
+              {{ "ce champ doit etre compose 8 chiffre minimum" | translate }}
+            </div>
+          </div>
           </div>
 
-         
+          <input
+            class="button"
+            type="submit"
+            value="{{ 'S`inscrire' | translate }}"
+            [disabled]="registerform.invalid"
 
-          <input class="button" type="submit" value="{{'S`inscrire'|translate}}" />
-          <p class="message"><a [routerLink]="['/']">{{'connexion'|translate}}</a></p>
+          />
+          <p class="message">
+            <a [routerLink]="['/']">{{ "connexion" | translate }}</a>
+          </p>
         </form>
-       
-
       </div>
     </div>
   </div>

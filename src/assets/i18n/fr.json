@@ -14,5 +14,11 @@
     "ce champ doit être composé seulement avec du lettres":"ce champ doit être composé seulement avec du lettres",
     "retourner la page de connexion":"retourner la page de connexion",
     "Formulaire d'inscription":"Formulaire d'inscription",
-    "ajouter":"ajouter"
+    "ajouter":"ajouter",
+    "Supprimer":"Supprimer",
+    "Recherche":"Recherche",
+    "Ajout avec succès":"Ajout avec succès",
+    "Annuler":"Annuler",
+    "Confirmation":"Confirmation",
+    "vous voulez supprimer ?":"vous voulez supprimer ?"
 }

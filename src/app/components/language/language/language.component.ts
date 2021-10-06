@@ -7,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageComponent implements OnInit {
   constructor() {}
-  lang: string="";
+  lang: string = '';
   ngOnInit(): void {
-    this.lang=localStorage.getItem("lang") || "fr";
+    this.lang = localStorage.getItem('lang') || 'fr';
   }
   selectLanguage(event: any) {
-  
-    localStorage.setItem("lang",event.target.value);
+    localStorage.setItem('lang', event.target.value);
     window.location.reload();
-   
-
   }
-   
-  
 }

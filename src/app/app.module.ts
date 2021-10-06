@@ -4,7 +4,6 @@ import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarnetComponent } from './components/carnet/listCarnet/carnet.component';
-import { UtilisateurComponent } from './components/utilisateurs/utilisateur/utilisateur.component';
 import { AddCarnetComponent } from './components/carnet/addCarnet/add-carnet/add-carnet.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -21,7 +20,6 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     CarnetComponent,
-    UtilisateurComponent,
     AddCarnetComponent,
     LanguageComponent,
     RegisterComponent,

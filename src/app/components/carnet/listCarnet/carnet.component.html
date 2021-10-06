@@ -1,16 +1,20 @@
-<div class="container">
   <div class="row">
     <div class="col-md-6">
       <app-add-carnet (newCarnet)="addCarnet($event)"></app-add-carnet>
     </div>
+
     <div class="col-md-6">
+      <div class="form_wrapper">
+
       <input
         type="text"
         class="form-control"
         [(ngModel)]="item"
         (input)="filtreListe()"
+        class="input_field"
+        placeholder="{{'Recherche'|translate}}"
       />
-
+<div style="overflow-x: auto;">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -19,18 +23,42 @@
             <th>{{'prenom'|translate}}</th>
             <th>{{'telephone'|translate}}</th>
             <th>{{'région'|translate}}</th>
+            <th>{{'Action'|translate}}</th>
+
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let carne of carneList">
+          <tr *ngFor="let carnet of carneList">
             <th scope="row"></th>
-            <td>{{ carne.nom }}</td>
-            <td>{{ carne.prenom }}</td>
-            <td>{{ carne.telephone }}</td>
-            <td>{{ carne.region }}</td>
+            <td>{{ carnet.nom }}</td>
+            <td>{{ carnet.prenom }}</td>
+            <td>{{ carnet.telephone }}</td>
+            <td>{{ carnet.region }}</td>
+            <td><button type="button" class="btn btn-danger" (click)="select(carnet.id)"  data-bs-toggle="modal" data-bs-target="#exampleModal">{{'Supprimer'|translate}}</button>
+              <!-- Modal -->
+             
+            </td>
           </tr>
         </tbody>
       </table>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{'Confirmation'|translate}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div  class="alert alert-warning" role="alert">
+        {{'vous voulez supprimer ?'|translate}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'Annuler'|translate}}</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">{{'Supprimer'|translate}}</button>
+      </div>
     </div>
   </div>
 </div>

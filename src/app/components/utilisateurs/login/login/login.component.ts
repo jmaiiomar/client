@@ -10,12 +10,15 @@ import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-
 export class LoginComponent implements OnInit {
   loginform: FormGroup;
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
     let formcontrols = {
       email: new FormControl('', [
         Validators.required,
@@ -26,18 +29,14 @@ export class LoginComponent implements OnInit {
     };
     this.loginform = this.fb.group(formcontrols);
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   login(): void {
     const data = this.loginform.value;
-
     this.userService.login(data).subscribe((res) => {
       if (res == null) {
         alert('erro');
       } else {
         this.router.navigateByUrl('/home');
-
-       
       }
     });
   }
