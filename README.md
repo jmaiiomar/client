@@ -1,4 +1,4 @@
-# client
+# client VIDMIZER-test
  <p align="center">
   <img height="350" width="500" src="https://camo.githubusercontent.com/25b0d45d4ba8415afe1b1ba6e357a053e5dec814562e59896b038bf0e62a328d/68747470733a2f2f73796d666f6e792e66692f66696c65732f323031362d30362f73637265656e2d73686f742d323031362d30362d30352d61742d31312e34372e30382e706e67">
 </p>
@@ -8,7 +8,7 @@ mini-application create with symfony4.4 and angular 9 , the projet contain authe
 
 # 🔧 Installation & Usage
 - Clone the Master branch
-- Go to main directory by typing "cd clien" and run "npm install"
+- Go to main directory by typing "cd client" and run "npm install"
 - Run "ng serve --open" in the directory
 - Go to http://localhost:4200 and Enjoy :)"
  
